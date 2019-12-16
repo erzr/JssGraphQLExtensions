@@ -23,8 +23,8 @@ After this in place, you should see `ancestor` and `ancestors` fields on the `It
 
 **Ancestor Example:**
 ```
-{
-  item(path:"/sitecore/content/reacttest/home/graphql") {
+query AncestorExample($path:String){
+  item(path:$path) {
     ancestor(name:"home") {
       name
       url
@@ -41,8 +41,8 @@ The following fields are available as parameters for `ancestor`:
 
 **Ancestors Example:**
 ```
-{
-  item(path:"/sitecore/content/reacttest/home/graphql") {
+query AncestorsExample($path:String){
+  item(path:$path) {
     ancestors(requirePresentation:true, includeSelf:true) {
       name
       url
